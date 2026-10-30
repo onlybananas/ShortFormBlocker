@@ -37,6 +37,16 @@ class ProfileFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val backTextView = view.findViewById<View>(R.id.backTextView)
+
+        backTextView.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
