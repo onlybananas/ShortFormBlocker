@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".LoginFragment">
+
+    <ScrollView
+        android:id="@+id/loginScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="24dp">
+
+            <!-- App icon -->
+
+            <!-- Header -->
+            <TextView
+                android:id="@+id/loginTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Log In"
+                android:textColor="#111111"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/loginSubtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Log in to keep your streak going"
+                android:textColor="#707070"
+                android:textSize="18sp" />
+
+            <!-- Email or username -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loginEmailInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Email or username"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxStrokeColor="@color/app_purple"
+                app:hintTextColor="@color/app_purple">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loginEmailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#222222"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loginPasswordInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Password"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxStrokeColor="@color/app_purple"
+                app:hintTextColor="@color/app_purple"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loginPasswordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#222222"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Forgot password -->
+            <TextView
+                android:id="@+id/forgotPasswordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:text="Forgot password?"
+                android:textColor="@color/app_purple"
+                android:textSize="16sp" />
+
+            <!-- Log In button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:text="Log In"
+                android:textSize="18sp"
+                app:cornerRadius="8dp" />
+
+            <!-- Link to Sign Up -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/noAccountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't have an account? "
+                    android:textColor="#707070"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/signUpLinkTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:minHeight="48dp"
+                    android:text="Sign Up"
+                    android:textColor="@color/app_purple"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
