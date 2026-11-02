@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Colors used by the Friends and Settings screens -->
+<resources>
+    <color name="fs_background">#FFF8FAFC</color>
+    <color name="fs_card">#FFFFFFFF</color>
+    <color name="fs_card_stroke">#FFE5E7EB</color>
+    <color name="fs_primary">#FF6C5CE7</color>
+    <color name="fs_primary_light">#FFE0E7FF</color>
+    <color name="fs_primary_light_stroke">#FFC7D2FE</color>
+    <color name="fs_text_primary">#FF111827</color>
+    <color name="fs_text_secondary">#FF6B7280</color>
+    <color name="fs_text_hint">#FF9CA3AF</color>
+    <color name="fs_streak_orange">#FFD97706</color>
+    <color name="fs_accept_green">#FF22C55E</color>
+    <color name="fs_decline_gray">#FFE5E7EB</color>
+    <color name="fs_decline_text">#FF374151</color>
+    <color name="fs_switch_blue">#FF2196F3</color>
+    <color name="fs_logout_red">#FFDC2626</color>
+</resources>
