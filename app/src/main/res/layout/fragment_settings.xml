@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fs_background"
+    android:orientation="vertical"
+    tools:context=".SettingsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center"
+                android:text="Settings"
+                android:textColor="@color/fs_text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Daily Limits -->
+            <TextView
+                style="@style/FS.SectionTitle"
+                android:layout_marginTop="12dp"
+                android:text="Daily Limits" />
+
+            <TextView
+                style="@style/FS.SubText"
+                android:layout_marginTop="2dp"
+                android:text="Changes take effect the next day" />
+
+            <LinearLayout
+                android:id="@+id/row_limit_youtube"
+                style="@style/FS.Card">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="YouTube"
+                        android:textColor="@color/fs_text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="New limit: 30 min starts tomorrow"
+                        android:textColor="@color/fs_streak_orange"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60 min  ›"
+                    android:textColor="@color/fs_text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_limit_instagram"
+                style="@style/FS.Card">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Instagram"
+                        android:textColor="@color/fs_text_primary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="45 min  ›"
+                    android:textColor="@color/fs_text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Notifications -->
+            <TextView
+                style="@style/FS.SectionTitle"
+                android:layout_marginTop="24dp"
+                android:text="Notifications" />
+
+            <LinearLayout style="@style/FS.Card">
+
+                <TextView
+                    style="@style/FS.RowLabel"
+                    android:text="Warn me 5 min before limit" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switch_warn_before_limit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:minHeight="0dp"
+                    android:theme="@style/ThemeOverlay.FS.Switch" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FS.Card">
+
+                <TextView
+                    style="@style/FS.RowLabel"
+                    android:text="Remind me if ignored" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switch_remind_if_ignored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:minHeight="0dp"
+                    android:theme="@style/ThemeOverlay.FS.Switch" />
+            </LinearLayout>
+
+            <!-- Account -->
+            <TextView
+                style="@style/FS.SectionTitle"
+                android:layout_marginTop="24dp"
+                android:text="Account" />
+
+            <LinearLayout
+                android:id="@+id/row_change_password"
+                style="@style/FS.Card">
+
+                <TextView
+                    style="@style/FS.RowLabel"
+                    android:text="Change Password" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/fs_text_secondary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_log_out"
+                style="@style/FS.Card">
+
+                <TextView
+                    style="@style/FS.RowLabel"
+                    android:text="Log Out"
+                    android:textColor="@color/fs_logout_red"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

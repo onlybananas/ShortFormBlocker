@@ -45,6 +45,15 @@ class ProfileFragment : Fragment() {
         backTextView.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
+
+        val viewAllFriendsTextView = view.findViewById<View>(R.id.viewAllFriendsTextView)
+
+        viewAllFriendsTextView.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, FriendsFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     companion object {
