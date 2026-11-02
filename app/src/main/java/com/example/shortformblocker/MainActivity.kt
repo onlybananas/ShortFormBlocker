@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.main, SettingsFragment())
                     .commit()
+            } else if (item.itemId == R.id.nav_insights) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.main, MetricsFragment())
+                    .commit()
             }
 
             true
