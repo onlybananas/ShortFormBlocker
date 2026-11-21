@@ -53,14 +53,14 @@
                 android:textColor="#707070"
                 android:textSize="18sp" />
 
-            <!-- Email or username -->
+            <!-- Email -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/loginEmailInputLayout"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:hint="Email or username"
+                android:hint="Email"
                 app:boxCornerRadiusTopStart="4dp"
                 app:boxCornerRadiusTopEnd="4dp"
                 app:boxCornerRadiusBottomStart="4dp"
