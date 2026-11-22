@@ -12,6 +12,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -205,8 +206,10 @@ class SignUpFragment : Fragment() {
             "email" to email,
             "currentStreak" to 0L,
             "longestStreak" to 0L,
+            "friendsCount" to 0L,
             "warnBeforeLimit" to true,
-            "remindIfIgnored" to true
+            "remindIfIgnored" to true,
+            "createdAt" to FieldValue.serverTimestamp()
         )
 
         val batch = db.batch()
