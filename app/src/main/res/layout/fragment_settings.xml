@@ -63,15 +63,18 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/youtubePendingTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text="New limit: 30 min starts tomorrow"
                         android:textColor="@color/fs_streak_orange"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/youtubeLimitTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="60 min  ›"
@@ -95,9 +98,20 @@
                         android:text="Instagram"
                         android:textColor="@color/fs_text_primary"
                         android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/instagramPendingTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text=""
+                        android:textColor="@color/fs_streak_orange"
+                        android:textSize="11sp"
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/instagramLimitTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="45 min  ›"
