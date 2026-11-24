@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/FS.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/friendAvatar"
+        style="@style/FS.Avatar"
+        android:text="AB" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/friendName"
+            style="@style/FS.NameText"
+            android:text="Display Name" />
+
+        <TextView
+            android:id="@+id/friendUsername"
+            style="@style/FS.SubText"
+            android:text="\@username" />
+    </LinearLayout>
+
+</LinearLayout>
