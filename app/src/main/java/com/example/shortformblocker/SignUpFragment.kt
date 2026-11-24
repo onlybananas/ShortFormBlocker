@@ -153,26 +153,62 @@ class SignUpFragment : Fragment() {
                         return@addOnSuccessListener
                     }
 
-                    seedUserDocuments(
-                        db = db,
-                        uid = uid,
-                        firstName = firstName,
-                        lastName = lastName,
-                        username = username,
-                        email = email,
-                        onComplete = {
-                            if (!isAdded) return@seedUserDocuments
-                            startActivity(Intent(requireContext(), MainActivity::class.java))
-                            requireActivity().finish()
-                        },
-                        onError = { message ->
-                            if (!isAdded) return@seedUserDocuments
-                            createAccountButton.isEnabled = true
-                            Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+                    // Check if username is already taken
+                    db.collection("userDirectory")
+                        .whereEqualTo("username", username)
+                        .limit(1)
+                        .get()
+                        .addOnSuccessListener { result ->
+                            if (!result.isEmpty) {
+                                // Username is taken, delete newly created Auth account
+                                authResult.user?.delete()
+                                    ?.addOnSuccessListener {
+                                        if (isAdded) {
+                                            usernameLayout.error = "Username is already taken"
+                                            createAccountButton.isEnabled = true
+                                        }
+                                    }?.addOnFailureListener {
+                                        if (isAdded) {
+                                            createAccountButton.isEnabled = true
+                                            Toast.makeText(
+                                                requireContext(),
+                                                "Failed to cancel registration",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    }
+                            } else {
+                                // Username is available, save profile
+                                seedUserDocuments(
+                                    db = db,
+                                    uid = uid,
+                                    firstName = firstName,
+                                    lastName = lastName,
+                                    username = username,
+                                    email = email,
+                                    onComplete = {
+                                        if (!isAdded) return@seedUserDocuments
+                                        startActivity(Intent(requireContext(), MainActivity::class.java))
+                                        requireActivity().finish()
+                                    },
+                                    onError = { message ->
+                                        if (!isAdded) return@seedUserDocuments
+                                        createAccountButton.isEnabled = true
+                                        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+                                    }
+                                )
+                            }
+                        }.addOnFailureListener {
+                            if (isAdded) {
+                                createAccountButton.isEnabled = true
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Failed to check username",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                         }
-                    )
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     if (!isAdded) return@addOnFailureListener
                     createAccountButton.isEnabled = true
                     Toast.makeText(
@@ -197,6 +233,8 @@ class SignUpFragment : Fragment() {
     ) {
         val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Calendar.getInstance().time)
         val userRef = db.collection("users").document(uid)
+        // Get user directory document
+        val directoryRef = db.collection("userDirectory").document(uid)
 
         // Default profile fields
         val profileData = hashMapOf(
@@ -212,8 +250,15 @@ class SignUpFragment : Fragment() {
             "createdAt" to FieldValue.serverTimestamp()
         )
 
+        // Searchable user information
+        val directoryData = hashMapOf(
+            "username" to username,
+            "displayName" to "$firstName $lastName"
+        )
+
         val batch = db.batch()
         batch.set(userRef, profileData)
+        batch.set(directoryRef, directoryData)
         // Set default tracked app limits
         batch.set(
             userRef.collection("trackedApps").document("youtube"),

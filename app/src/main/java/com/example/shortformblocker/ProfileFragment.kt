@@ -217,13 +217,22 @@ class ProfileFragment : Fragment() {
                     } else {
                         saveButton.isEnabled = false
 
-                        // Update names in firestore
-                        userRef.update(
-                            mapOf(
+                        // Update names in Firestore
+                        val batch = db.batch()
+
+                        batch.update(userRef, mapOf(
                                 "firstName" to firstName,
                                 "lastName" to lastName
                             )
-                        ).addOnSuccessListener {
+                        )
+
+                        batch.update(
+                            db.collection("userDirectory").document(uid),
+                            "displayName",
+                            "$firstName $lastName"
+                        )
+
+                        batch.commit().addOnSuccessListener {
                             currentFirstName = firstName
                             currentLastName = lastName
                             // Update cache
