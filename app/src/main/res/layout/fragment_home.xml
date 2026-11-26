@@ -128,8 +128,7 @@
                         android:id="@+id/youtubeSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:trackTint="@color/switch_toggle_color"
-                        app:thumbTint="#FFFFFF"
+                        android:theme="@style/ThemeOverlay.FS.Switch"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -170,8 +169,7 @@
                         android:id="@+id/instagramSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:trackTint="@color/switch_toggle_color"
-                        app:thumbTint="#FFFFFF"
+                        android:theme="@style/ThemeOverlay.FS.Switch"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

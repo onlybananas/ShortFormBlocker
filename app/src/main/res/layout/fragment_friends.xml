@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
 
-            <!-- My Friends header + Leaderboard link -->
+            <!-- My Friends header -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -114,14 +114,6 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:text="My Friends (0)" />
-
-                <TextView
-                    android:id="@+id/link_leaderboard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Leaderboard ›"
-                    android:textColor="@color/fs_primary"
-                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout

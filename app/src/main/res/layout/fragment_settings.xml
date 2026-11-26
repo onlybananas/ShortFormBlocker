@@ -19,35 +19,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="20dp"
+            android:paddingStart="24dp"
             android:paddingTop="12dp"
-            android:paddingEnd="20dp"
+            android:paddingEnd="24dp"
             android:paddingBottom="20dp">
 
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="64dp"
                 android:gravity="center"
                 android:text="Settings"
                 android:textColor="@color/fs_text_primary"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <!-- Daily Limits -->
             <TextView
                 style="@style/FS.SectionTitle"
+                android:textSize="20sp"
                 android:layout_marginTop="12dp"
                 android:text="Daily Limits" />
 
             <TextView
                 style="@style/FS.SubText"
+                android:textSize="14sp"
                 android:layout_marginTop="2dp"
                 android:text="Changes take effect the next day" />
 
             <LinearLayout
                 android:id="@+id/row_limit_youtube"
-                style="@style/FS.Card">
+                style="@style/FS.Card"
+                android:layout_marginTop="12dp"
+                android:minHeight="74dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -60,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:text="YouTube"
                         android:textColor="@color/fs_text_primary"
-                        android:textSize="14sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/youtubePendingTextView"
@@ -69,7 +75,7 @@
                         android:layout_marginTop="2dp"
                         android:text="New limit: 30 min starts tomorrow"
                         android:textColor="@color/fs_streak_orange"
-                        android:textSize="11sp"
+                        android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>
 
@@ -79,12 +85,16 @@
                     android:layout_height="wrap_content"
                     android:text="60 min  ›"
                     android:textColor="@color/fs_text_secondary"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/row_limit_instagram"
-                style="@style/FS.Card">
+                style="@style/FS.Card"
+                android:layout_marginTop="12dp"
+                android:minHeight="74dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -97,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:text="Instagram"
                         android:textColor="@color/fs_text_primary"
-                        android:textSize="14sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/instagramPendingTextView"
@@ -106,7 +116,7 @@
                         android:layout_marginTop="2dp"
                         android:text=""
                         android:textColor="@color/fs_streak_orange"
-                        android:textSize="11sp"
+                        android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>
 
@@ -116,19 +126,26 @@
                     android:layout_height="wrap_content"
                     android:text="45 min  ›"
                     android:textColor="@color/fs_text_secondary"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <!-- Notifications -->
             <TextView
                 style="@style/FS.SectionTitle"
+                android:textSize="20sp"
                 android:layout_marginTop="24dp"
                 android:text="Notifications" />
 
-            <LinearLayout style="@style/FS.Card">
+            <LinearLayout
+                style="@style/FS.Card"
+                android:layout_marginTop="12dp"
+                android:minHeight="74dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <TextView
                     style="@style/FS.RowLabel"
+                    android:textSize="17sp"
                     android:text="Warn me 5 min before limit" />
 
                 <com.google.android.material.materialswitch.MaterialSwitch
@@ -140,10 +157,16 @@
                     android:theme="@style/ThemeOverlay.FS.Switch" />
             </LinearLayout>
 
-            <LinearLayout style="@style/FS.Card">
+            <LinearLayout
+                style="@style/FS.Card"
+                android:layout_marginTop="12dp"
+                android:minHeight="74dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <TextView
                     style="@style/FS.RowLabel"
+                    android:textSize="17sp"
                     android:text="Remind me if ignored" />
 
                 <com.google.android.material.materialswitch.MaterialSwitch
@@ -158,15 +181,21 @@
             <!-- Account -->
             <TextView
                 style="@style/FS.SectionTitle"
+                android:textSize="20sp"
                 android:layout_marginTop="24dp"
                 android:text="Account" />
 
             <LinearLayout
                 android:id="@+id/row_change_password"
-                style="@style/FS.Card">
+                style="@style/FS.Card"
+                android:layout_marginTop="12dp"
+                android:minHeight="74dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <TextView
                     style="@style/FS.RowLabel"
+                    android:textSize="17sp"
                     android:text="Change Password" />
 
                 <TextView
@@ -174,15 +203,20 @@
                     android:layout_height="wrap_content"
                     android:text="›"
                     android:textColor="@color/fs_text_secondary"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/row_log_out"
-                style="@style/FS.Card">
+                style="@style/FS.Card"
+                android:layout_marginTop="12dp"
+                android:minHeight="74dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
                 <TextView
                     style="@style/FS.RowLabel"
+                    android:textSize="17sp"
                     android:text="Log Out"
                     android:textColor="@color/fs_logout_red"
                     android:textStyle="bold" />

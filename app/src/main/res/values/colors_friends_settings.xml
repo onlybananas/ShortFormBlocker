@@ -14,6 +14,6 @@
     <color name="fs_accept_green">#FF22C55E</color>
     <color name="fs_decline_gray">#FFE5E7EB</color>
     <color name="fs_decline_text">#FF374151</color>
-    <color name="fs_switch_blue">#FF2196F3</color>
+    <color name="fs_switch_green">#FF4CAF50</color>
     <color name="fs_logout_red">#FFDC2626</color>
 </resources>
